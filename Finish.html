@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+  <h2>See The Console</h2>
+  <p onClick="makeOrange()">Make A Orange Touch 😮‍💨😮‍💨</p>
+ 
+  <script>
+    const cat = [{ name: 'eva ', age: 1 }, { name: 'Podric', age: 2 }];
+
+    function makeOrange() {
+      const p = document.querySelector('p');
+      p.style.color = '#ff6e00';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+console.log("Hello JavaScript")
+
+
+    // Interpolated
+
+    console.log('Hello I am roket %s', '🚀🚀');
+
+
+    // Styled
+    console.log("%cHello JavaScript","color: #white ;background-color: orange");
+    // warning!
+
+    console.warn("Attention it is a javascript warning !! ")
+
+    // Error :| 
+
+    console.error("Attention it is a javascript error !! ")
+
+    // Info
+    console.info("Info", "This is an information message !! .");
+    // Testing
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('ouch'), 'That is wrong!');
+
+
+    // clearing
+    // console.clear() // all Console clear 
+
+    // Viewing DOM Elements
+    console.log(p)
+    console.log(p)
+    // console.clear(); // clear
+    // Grouping together
+
+    cat.forEach(cat=> {
+      console.groupCollapsed(`${cat.name}`);
+      console.log(`This is ${cat.name}`);
+      console.log(`${cat.name} is ${cat.age} years old`);
+      console.log(`${cat.name} is ${cat.age * 7} dog years old`);
+      console.groupEnd(`${cat.name}`);
+
+    })
+
+
+
+
+
+    // counting
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Steve');
+    // timing
+
+    console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      });
+
+    console.table(cat);
+
+
+
+
+
+  </script>
+</body>
+</html>
